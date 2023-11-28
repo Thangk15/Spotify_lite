@@ -1,0 +1,15 @@
+@keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .rotate-animation-20s {
+    animation: rotate 20s linear infinite;
+    animation-play-state: running;
+  }
+
+  .rotate-animation.paused {
+    animation-play-state: paused;
+    animation: none;
+  }

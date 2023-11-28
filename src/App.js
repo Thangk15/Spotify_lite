@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import DetailSong from './Components/DetailSong';
+import ListSongs from './Components/ListSongs';
+import NavBar from './Components/NavBar';
+import MyContextProvider from './Context';
+// import { useContext } from 'react';
+// import { MyContext } from './Context';
+import Playing from './Components/Playing';
+// import { useState } from 'react';
 
-function App() {
+export default function App() {
+  // const {idPlaying} = useContext(MyContext)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <MyContextProvider>
+        <div className="App">
+          <NavBar/>
 
-export default App;
+          <div className='grid grid-cols-3 bg-gray-900 h-screen-navbar-player overflow-hidden'>
+            <DetailSong/>
+            <ListSongs/>
+          </div>
+          
+          <Playing/>
+      </div>
+    </MyContextProvider>
+  )
+}
